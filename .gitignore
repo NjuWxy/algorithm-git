@@ -2,3 +2,8 @@
 */*.iml
 */target/*
 */node_modules
+*/.metadata
+*/*/.settings
+*/*/bin
+*/*/.classpath
+*/*/.project
