@@ -10,5 +10,5 @@
 */.metadata
 */*/.idea/*
 */*/*.iml
-*/*/target/*
+*/*/out/*
 
