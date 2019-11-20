@@ -12,8 +12,8 @@ import java.util.Scanner;
 
 public class HorspoolStringMatch {
 	private static void solution(String text,String pattern) {
-		System.out.println(text);
-		System.out.println(pattern);
+		//System.out.println(text);
+		//System.out.println(pattern);
 		Map<Character, Integer> table = new HashMap<Character, Integer>();
 		List<Integer> resList = new ArrayList<Integer>(); 
 		for (int i = 0; i < pattern.length()-1; i++) {
@@ -47,7 +47,7 @@ public class HorspoolStringMatch {
 			}
 			
 		}
-		System.out.println(resList.size());
+		//System.out.println(resList.size());
 		print(resList);
 		
 	}
