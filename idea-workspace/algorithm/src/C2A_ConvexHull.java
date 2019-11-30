@@ -1,6 +1,21 @@
 import java.util.*;
 
-public class ConvexHull {
+/**点的凸包
+ * Convex Hull of a set of points, in 2D plane, is a convex polygon with minimum area such that each point lies either
+ * on the boundary of polygon or inside it. Now given a set of points the task is to find the convex hull of points.
+ *
+ * 首先对所有点排序，找出最左边的点和最右边的点，allPoints最初为所有的点去掉p1,p2, 作为计算凸包起始参数
+ * findFarthestPoint(Point p1, Point p2, List<Point> allPoints, List<Point> hullPoints, POS_TYPE posType)
+ *      allPoints表示在p1,p2一端的点，hullPoints表示凸包结果点，posType表示在p1,p2上方还是下方
+ *      linePoints记录与p1,p2在同一直线的点,sidePoints记录在posType一端的点
+ *      遍历allPoints里的点p3,计算p1,p2,p3组成的三角形面积，
+ *          >0表示p3在p1,p2上方，<0表示在下方，=0表示在p1,p2这条直线上。对应加进linePoints和sidePoints
+ *      如果没有sidePoints了，直接把linePoints加进hullPoints里
+ *      反之，sidePoints去除farthestPoint作为下一次的allPoints，
+ *      分别调用findFarthestPoint(p1,farthestPoint....)
+ *      和findFarthestPoint(farthestPoint,p2....)
+ */
+public class C2A_ConvexHull {
     static class Point{
         int x;
         int y;
